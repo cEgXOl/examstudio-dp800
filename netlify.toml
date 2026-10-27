@@ -1,0 +1,21 @@
+[build]
+  command = "node scripts/build-functions.mjs"
+  publish = "dist"
+  functions = "functions-built"
+[functions]
+  node_bundler = "esbuild"
+[[edge_functions]]
+  function = "access"
+  path = "/*"
+[dev]
+  framework = "#static"
+  publish = "dist"
+  port = 8888
+[[headers]]
+  for = "/*.js"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+[[headers]]
+  for = "/.netlify/functions/*"
+  [headers.values]
+    Cache-Control = "no-store"

@@ -1,0 +1,8 @@
+node_modules/
+.netlify/
+functions-built/
+.env*
+!.env.example
+*.zip
+*.tar.gz
+deno.lock
